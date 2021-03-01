@@ -1,0 +1,47 @@
+<div class="col-md-12 mt-4">
+
+    <div [hidden]="!viewChange" class="mb-2">
+        <button mat-raised-button (click)="onClickNew()">Adicionar&nbsp;<label class="cssLabel"><i
+                    class="fas fa-plus"></i></label></button>
+    </div>
+
+    <div [hidden]="!viewChange">
+        <app-data-table [option]="dividasDataTable" [filter]="filterData"></app-data-table>
+    </div>
+
+    <div [hidden]="viewChange">
+        <form [formGroup]="dividasForm">
+
+            <div class="mb-4 cssHeader" (click)="onClickLast()">
+                <span>Voltar&nbsp;<label><i class="fas fa-reply"></i></label></span>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <mat-form-field color="accent" appearance="fill">
+                        <mat-label>Data vencimento</mat-label>
+                        <input matInput formControlName="dataVencimento" [matDatepicker]="picker1">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-6">
+                    <mat-form-field class="form-field" appearance="fill">
+                        <mat-label> Valor </mat-label>
+                        <input matInput formControlName="valor" required>
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <div [hidden]="!(dividasForm.touched)">
+                <app-spinner-button [option]="btnSalver"></app-spinner-button>
+            </div>
+
+
+        </form>
+    </div>
+
+</div>

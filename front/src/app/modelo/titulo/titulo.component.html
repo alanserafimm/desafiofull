@@ -1,0 +1,99 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <div class="mt-5">
+
+                <div [hidden]="!viewChange">
+
+                    <div class="mb-2">
+                        <button mat-raised-button (click)="onClickNew()">Adicionar&nbsp;<label class="cssLabel"><i
+                                    class="fas fa-plus"></i></label></button>
+                    </div>
+
+                    <app-data-table [option]="tituloDataTable" [filter]="filterData"></app-data-table>
+
+                </div>
+
+                <div [hidden]="viewChange">
+                    <mat-card label="First">
+
+                        <form [formGroup]="tituloForm">
+
+                            <div class="mb-4 cssHeader" (click)="onClickLast()">
+                                <span>Voltar&nbsp;<label><i class="fas fa-reply"></i></label></span>
+                            </div>
+
+
+                            <div class="col-md-12">
+
+                                <div class="row">
+
+                                    <div class="col-md-2">
+                                        <mat-form-field class="form-field" appearance="fill">
+                                            <mat-label> Número do título" </mat-label>
+                                            <input matInput formControlName="titulo" required>
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <mat-form-field class="form-field" appearance="fill">
+                                            <mat-label> Nome do devedor </mat-label>
+                                            <input matInput formControlName="devedor" required>
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <mat-form-field class="form-field" appearance="fill">
+                                            <mat-label> CPF do devedor </mat-label>
+                                            <input matInput formControlName="cpf" (mask)="00.000.000/0000-00" required>
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <mat-form-field class="form-field" appearance="fill">
+                                            <mat-label> % de juros </mat-label>
+                                            <input matInput formControlName="juros" required>
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <mat-form-field class="form-field" appearance="fill">
+                                            <mat-label> % de multa </mat-label>
+                                            <input matInput formControlName="multa" required>
+                                        </mat-form-field>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                            <div [hidden]="!(tituloForm.touched)">
+                                <app-spinner-button [option]="btnSalver"></app-spinner-button>
+                            </div>
+
+
+                            <div [hidden]="!tituloForm.value._id">
+                                <mat-tab-group [(selectedIndex)]=selectedIndex>
+                                    <mat-tab label="Dívidas" active="true">
+                                        <app-titulo-dividas [id]="tituloForm.value._id"></app-titulo-dividas>
+                                    </mat-tab>
+                                </mat-tab-group>
+                            </div>
+
+                        </form>
+
+                    </mat-card>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>

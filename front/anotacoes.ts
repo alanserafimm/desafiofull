@@ -1,0 +1,1 @@
+// npm i @types/jquery@3.5.4 --save-dev

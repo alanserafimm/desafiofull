@@ -1,0 +1,18 @@
+ Frameworks/banco utilizado:
+ 	MongoDb
+	Robo3T
+	NodeJs
+	Angular
+
+Modo de Uso:
+    Inicializar as pastas "back" e "front" com seguintes comandos: "npm i" e "npm --save"
+	back: dentro da pasta rodar seguinte comando "tsc -w" && "nodemon _dist/main.js"
+	obs: se tudo ocorrer bem vai mostrar as rotas disponiveis mostrando que o sistema está pronto.
+
+Versões utilidadas:
+   Angular CLI: 8.3.29
+   Node v14.15.4
+   NPM 6.14.10
+   TypeScript 3.9.7
+   
+npm exemple exemple@8.3.29

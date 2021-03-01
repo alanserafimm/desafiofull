@@ -1,0 +1,25 @@
+{
+  "name": "cls",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "@types/koa": "^2.11.8",
+    "@types/koa-router": "^7.4.1",
+    "@types/mongoose": "^5.10.3",
+    "koa": "^2.13.1",
+    "koa-body": "^4.2.0",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^10.0.0",
+    "mongoose": "^5.9.27",
+    "nodemon": "^2.0.7",
+    "save": "^2.4.0",
+    "typescript": "^4.1.5"
+  }
+}
